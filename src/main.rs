@@ -65,7 +65,7 @@ fn main() {
             pallete[i][j] = rng.gen_range(0..254) as u8;
         }
     }
-    // INIT POPN RANDOM
+    // INIT POPN WITH RANDOM NUMBERS IN RANGE
     let mut popn: Vec<Vec<u8>> = vec![];
     for _ in 0..HEIGHT {
         let mut row: Vec<u8> = vec![];
@@ -93,6 +93,7 @@ fn main() {
         popn = new_popn.clone();
         all_array.push(popn.clone());
     }
+    // WAS TOO LAZY TO FIND A BETTER SOLUTION. ARRAY TO GIF BLOCK USING VEC OF ALL COMPUTED STATES . SUPER SLOW.
     let mut image = File::create("done.gif").unwrap();
     let mut encoder = gif::Encoder::new(&mut image, WIDTH as u16, HEIGHT as u16, &[]).unwrap();
     let mut imgbuf = image::ImageBuffer::new(WIDTH as u32, HEIGHT as u32);
