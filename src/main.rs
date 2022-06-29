@@ -42,16 +42,13 @@ fn update(
             count += 1;
         };
     }
-    if count > 1 {
-        return true;
-    }
-    return false;
+    return count > 1;
 }
 
 fn main() {
     // INIT WITH THESE PARAMETERS
-    let HEIGHT: usize = 500;
-    let WIDTH: usize = 500;
+    let HEIGHT: usize = 200;
+    let WIDTH: usize = 200;
     let GENS: usize = 100;
     let MAXVAL: u8 = 4;
     let h: usize = HEIGHT - 1;
